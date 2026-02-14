@@ -1,0 +1,426 @@
+/* 
+   --------------------------------------------------------
+   VALENTINE'S DAY MUSEUM - MAIN STYLESHEET
+   --------------------------------------------------------
+*/
+
+:root {
+    /* Color Palette - Museum Aesthetic */
+    /* Warm Off-White Background */
+    --bg-color: #fdfbf7;
+    /* Deep Charcoal Text */
+    --text-color: #2c2c2c;
+    /* Soft Gray for secondary text */
+    --text-light: #6e6e6e;
+    /* Elegant Red Accent */
+    --accent-color: #c0392b;
+    /* Frame Border Color */
+    --frame-border: #e0e0e0;
+    /* Soft Shadow */
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* Frame Shadow */
+    --shadow-frame: 0 20px 40px rgba(0, 0, 0, 0.1);
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Outfit', sans-serif;
+    /* Spacing */
+    --section-spacing: 15vh;
+}
+
+
+/* RESET & BASE */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: auto;
+    /* Let Lenis handle scroll */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+
+/* MUSIC CONTROL */
+
+.music-control {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 1px solid var(--frame-border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-soft);
+}
+
+.music-control:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.music-icon {
+    font-size: 1.2rem;
+}
+
+.music-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* INTRO SECTION */
+
+.intro-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.intro-content {
+    z-index: 2;
+    padding: 0 20px;
+    opacity: 0;
+    /* Hidden initially for animation */
+    transform: translateY(30px);
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.scroll-ind {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    animation: moveDown 2s infinite ease-in-out;
+    margin-top: 40px;
+}
+
+@keyframes moveDown {
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(10px);
+        opacity: 1;
+    }
+}
+
+
+/* GALLERY SECTIONS */
+
+.gallery-section {
+    min-height: 100vh;
+    padding: var(--section-spacing) 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.gallery-container.reverse {
+    flex-direction: row-reverse;
+}
+
+
+/* MUSEUM FRAMES */
+
+.frame-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.museum-frame {
+    position: relative;
+    padding: 20px;
+    /* Mat */
+    background: #fff;
+    box-shadow: var(--shadow-frame);
+    border: 1px solid #f0f0f0;
+    /* Simulate depth */
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-out;
+    overflow: hidden;
+    max-width: 500px;
+    /* Limit frame width */
+}
+
+.museum-frame:hover {
+    transform: scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 3/4;
+    /* Portrait ratio mostly */
+    filter: sepia(10%) contrast(105%);
+    /* Subtle vintage feel */
+}
+
+.frame-label {
+    margin-top: 15px;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+
+/* TEXT CONTENT */
+
+.text-wrapper {
+    flex: 1;
+    padding: 20px;
+    opacity: 0;
+    /* Hidden initially for scroll reveal */
+    transform: translateY(20px);
+}
+
+.gallery-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.gallery-text {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    max-width: 450px;
+}
+
+
+/* QUOTE SECTION */
+
+.quote-section {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.quote-container blockquote {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+.quote-container cite {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    font-style: normal;
+}
+
+
+/* COUPLE SECTION */
+
+.couple-section {
+    padding: var(--section-spacing) 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-light);
+    margin-bottom: 60px;
+    display: block;
+}
+
+.couple-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-img-wrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease;
+}
+
+.profile-card:hover .profile-img-wrapper {
+    transform: scale(1.1);
+}
+
+.profile-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.heart-divider {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--accent-color);
+    font-style: italic;
+}
+
+
+/* CLOSING SECTION */
+
+.closing-section {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #f8f6f2;
+    /* Slightly darker than bg */
+}
+
+.closing-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.closing-text {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+.signature {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    .gallery-container,
+    .gallery-container.reverse {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .text-wrapper {
+        text-align: center;
+    }
+    .gallery-text {
+        margin: 0 auto;
+    }
+    .quote-container blockquote {
+        font-size: 1.5rem;
+    }
+    .closing-title {
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story - A Museum Experience</title>
+
+    <!-- Google Fonts: Outfit for modern elegance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Critical CSS for loading state to prevent flash of unstyled content */
+        
+        body {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        body.loaded {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="loading">
+
+    <!-- Audio Element -->
+    <!-- REPLACE 'your-music-file.mp3' WITH YOUR ACTUAL MUSIC FILE PATH -->
+    <audio id="bg-music" loop>
+        <source src="Elvis Presley - Can't Help Falling In Love With You Saxophone Cover by Alexandra.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Control Button -->
+    <div class="music-control" id="music-btn">
+        <span class="music-icon">🎵</span>
+        <span class="music-text">Play Music</span>
+    </div>
+
+    <!-- Smooth Scroll Container (Lenis) -->
+    <main id="smooth-wrapper">
+
+        <!-- INTRO SECTION -->
+        <section class="intro-section" id="intro">
+            <div class="intro-content">
+                <h1 class="hero-title">The Museum of Us</h1>
+                <p class="hero-subtitle">A collection of moments, frozen in time.</p>
+                <div class="scroll-ind">Scroll to Explore ↓</div>
+            </div>
+            <div class="overlay"></div>
+        </section>
+
+        <section class="gallery-section left-align" id="gallery-1">
+            <div class="gallery-container">
+                <div class="frame-wrapper">
+                    <div class="museum-frame">
+                        <!-- REPLACE WITH YOUR IMAGE -->
+                        <img src="aa4e05b3-5395-433c-b362-3552ade7efb8.JPG" alt="First Date Memory" class="gallery-img">
+                    </div>
+                    <div class="frame-label">Collection No. 1</div>
+                </div>
+                <div class="text-wrapper">
+                    <h2 class="gallery-title">SMA ERA</h2>
+                    <p class="gallery-text">
+                        Awal dari semuanya, dimana kita masih ragu ragu untuk memulai hubungan pacaran.
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION 1 -->
+        <section class="gallery-section left-align" id="gallery-1">
+            <div class="gallery-container">
+                <div class="frame-wrapper">
+                    <div class="museum-frame">
+                        <!-- REPLACE WITH YOUR IMAGE -->
+                        <img src="first.jpg" alt="First Date Memory" class="gallery-img">
+                    </div>
+                    <div class="frame-label">Collection No. 2</div>
+                </div>
+                <div class="text-wrapper">
+                    <h2 class="gallery-title">AWAL PACARAN</h2>
+                    <p class="gallery-text">
+                        Mulai berani mengungkapkan perasaan dan memulai kisah kita bersama ke jalan yang lebih serius, membuat komitmen untuk saling mendukung dan memahami satu sama lain
+
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION 2 -->
+        <section class="gallery-section right-align" id="gallery-2">
+            <div class="gallery-container reverse">
+                <div class="text-wrapper">
+                    <h2 class="gallery-title">AWAL KE ALAM</h2>
+                    <p class="gallery-text">
+                        Ini sebuah perjalanan yang tak terlupakan, dimana kita menjelajahi keindahan alam bersama sama dengan penuh tawa dan kebahagiaan.
+                </div>
+                <div class="frame-wrapper">
+                    <div class="museum-frame">
+                        <!-- REPLACE WITH YOUR IMAGE -->
+                        <img src="IMG_0050.JPG" alt="Shared Laughter" class="gallery-img">
+                    </div>
+                    <div class="frame-label">Collection No. 3</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION 3 -->
+        <section class="gallery-section left-align" id="gallery-3">
+            <div class="gallery-container">
+                <div class="frame-wrapper">
+                    <div class="museum-frame">
+                        <!-- REPLACE WITH YOUR IMAGE -->
+                        <img src="third.jpg" alt="Adventure Together" class="gallery-img">
+                    </div>
+                    <div class="frame-label">Collection No. 4</div>
+                </div>
+                <div class="text-wrapper">
+                    <h2 class="gallery-title">BUNGA PERTAMA</h2>
+                    <p class="gallery-text">
+                        Sebuah momen spesial dimana malam itu aku mengajakmu ngedate bukan hanya sekedar date tapi juga mengajakmu deeptalk dengan suasana yang penuh sedih suka dan meyakinkanmu untuk menjadi hubungan yang lebih baik lagi,bukan hanya ngedate melainkan juga saya
+                        memberikan bunga pertama untuk dirimu sayangku.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUOTE SECTION -->
+        <section class="quote-section">
+            <div class="quote-container">
+                <blockquote>"In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."</blockquote>
+                <cite>— Maya Angelou</cite>
+            </div>
+        </section>
+
+        <!-- COUPLE SECTION (Instagram Links) -->
+        <section class="couple-section">
+            <h2 class="section-title">The Curators</h2>
+            <div class="couple-container">
+                <!-- PROFILE 1 -->
+                <a href="https://www.instagram.com/helacurty?igsh=djJ3dnZqOHExd3lu" target="_blank" class="profile-card">
+                    <div class="profile-img-wrapper">
+                        <!-- REPLACE WITH YOUR PROFILE IMAGE -->
+                        <img src="IMG_0080.JPG" alt="My Profile">
+                    </div>
+                    <span class="profile-name">@Me</span>
+                </a>
+
+                <span class="heart-divider">&</span>
+
+                <!-- PROFILE 2 -->
+                <a href="https://www.instagram.com/valeshitaaa_?igsh=N2ZvaWM4dzNpNXZn" target="_blank" class="profile-card">
+                    <div class="profile-img-wrapper">
+                        <!-- REPLACE WITH PARTNER'S PROFILE IMAGE -->
+                        <img src="IMG_0083.JPG" alt="Partner Profile">
+                    </div>
+                    <span class="profile-name">@You</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- CLOSING SECTION -->
+        <section class="closing-section">
+            <div class="closing-content">
+                <h2 class="closing-title">Happy Valentine's Day</h2>
+                <p class="closing-text">Here's to creating many more masterpieces together.</p>
+                <div class="signature">Forever Yours.</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- External Libraries -->
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Lenis for Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
